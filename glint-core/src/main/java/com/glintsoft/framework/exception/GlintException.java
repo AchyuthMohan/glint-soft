@@ -1,6 +1,7 @@
 package com.glintsoft.framework.exception;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -37,7 +38,7 @@ public class GlintException extends RuntimeException {
         this.errorCode = errorCode;
         this.errorMessage = errorMessage;
         this.timestamp = LocalDateTime.now();
-        this.context = context;
+        this.context = context != null ? new HashMap<>(context) : null;
     }
     
     public GlintException(String errorCode, String errorMessage, Throwable cause, Map<String, Object> context) {
@@ -45,7 +46,7 @@ public class GlintException extends RuntimeException {
         this.errorCode = errorCode;
         this.errorMessage = errorMessage;
         this.timestamp = LocalDateTime.now();
-        this.context = context;
+        this.context = context != null ? new HashMap<>(context) : null;
     }
     
     public String getErrorCode() {
@@ -61,6 +62,6 @@ public class GlintException extends RuntimeException {
     }
     
     public Map<String, Object> getContext() {
-        return context;
+        return context != null ? new HashMap<>(context) : null;
     }
 }

@@ -10,7 +10,7 @@ A comprehensive Java Spring Boot framework designed for enterprise applications 
 - **Standardized Error Handling**: Centralized exception management with error codes
 - **Apache Standards**: Follows Apache Maven project standards
 - **Code Quality**: Integrated CodeQL and Checkstyle for code quality assurance
-- **CI/CD Ready**: Pre-configured GitHub Actions workflows
+- **CI/CD Ready**: Pre-configured GitHub Actions and CircleCI workflows
 
 ## 📦 Modules
 
@@ -264,6 +264,33 @@ class UserControllerIntegrationTest {
    - CodeQL security scanning
    - Vulnerability detection
    - Security report generation
+
+### CircleCI Configuration
+
+The project includes comprehensive CircleCI configuration with multiple workflows:
+
+1. **Build & Test Pipeline**:
+   - Parallel job execution
+   - Maven dependency caching
+   - Unit and integration tests
+   - Code quality checks (Checkstyle, JaCoCo)
+   - Security scanning (OWASP dependency check)
+   - Artifact generation and storage
+
+2. **Workflows**:
+   - **Default**: Runs on all branches
+   - **Nightly**: Daily health checks at 2 AM UTC
+   - **Release**: Production builds on main branch
+
+3. **Features**:
+   - ✅ Parallel execution for faster builds
+   - ✅ Comprehensive test coverage
+   - ✅ Security vulnerability scanning
+   - ✅ Quality gates and thresholds
+   - ✅ Artifact storage and management
+   - ✅ Slack notifications (optional)
+
+For detailed CircleCI setup instructions, see [CIRCLECI_SETUP.md](CIRCLECI_SETUP.md).
 
 ## 🤝 Contributing
 

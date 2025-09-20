@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -39,7 +40,7 @@ public class ErrorResponse {
     
     public ErrorResponse(String errorCode, String message, String path, Map<String, Object> context) {
         this(errorCode, message, path);
-        this.context = context;
+        this.context = context != null ? new HashMap<>(context) : null;
     }
     
     public ErrorResponse(String errorCode, String message, String path, Map<String, Object> context, String traceId) {
@@ -81,11 +82,11 @@ public class ErrorResponse {
     }
     
     public Map<String, Object> getContext() {
-        return context;
+        return context != null ? new HashMap<>(context) : null;
     }
     
     public void setContext(Map<String, Object> context) {
-        this.context = context;
+        this.context = context != null ? new HashMap<>(context) : null;
     }
     
     public String getTraceId() {

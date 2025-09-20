@@ -1,0 +1,49 @@
+# Local CircleCI Configuration for Testing
+# This file is used for local testing with CircleCI CLI
+
+version: 2.1
+
+# Local testing jobs (simplified versions)
+jobs:
+  local-build:
+    docker:
+      - image: openjdk:17-jdk-slim
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: Install Maven
+          command: |
+            apt-get update
+            apt-get install -y maven
+      - run:
+          name: Build and test
+          command: mvn clean compile test
+      - run:
+          name: Package
+          command: mvn package -DskipTests
+
+  local-quality:
+    docker:
+      - image: openjdk:17-jdk-slim
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: Install Maven
+          command: |
+            apt-get update
+            apt-get install -y maven
+      - run:
+          name: Checkstyle
+          command: mvn checkstyle:check
+      - run:
+          name: Coverage
+          command: mvn jacoco:report
+
+workflows:
+  version: 2
+  local-test:
+    jobs:
+      - local-build
+      - local-quality
