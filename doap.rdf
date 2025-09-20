@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:doap="http://usefulinc.com/ns/doap#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:asfext="http://projects.apache.org/ns/asfext#">
+
+  <doap:Project rdf:about="https://github.com/glint-soft/glint-spring-framework">
+    <doap:name>Glint Spring Framework</doap:name>
+    <doap:shortname>glint-spring-framework</doap:shortname>
+    <doap:description>Enterprise-ready Spring Boot framework with quick startup and easy maintenance</doap:description>
+    <doap:homepage rdf:resource="https://github.com/glint-soft/glint-spring-framework"/>
+    <doap:bug-database rdf:resource="https://github.com/glint-soft/glint-spring-framework/issues"/>
+    <doap:mailing-list rdf:resource="https://github.com/glint-soft/glint-spring-framework/discussions"/>
+    <doap:download-page rdf:resource="https://github.com/glint-soft/glint-spring-framework/releases"/>
+    <doap:repository rdf:resource="https://github.com/glint-soft/glint-spring-framework"/>
+    <doap:license rdf:resource="http://spdx.org/licenses/Apache-2.0"/>
+    <doap:programming-language>Java</doap:programming-language>
+    <doap:category>framework</doap:category>
+    <doap:category>spring-boot</doap:category>
+    <doap:category>enterprise</doap:category>
+    
+    <doap:release>
+      <doap:Version>
+        <doap:revision>1.0.0-SNAPSHOT</doap:revision>
+        <doap:created>2024-01-15</doap:created>
+      </doap:Version>
+    </doap:release>
+    
+    <doap:maintainer>
+      <foaf:Person>
+        <foaf:name>Glint Soft Team</foaf:name>
+        <foaf:mbox rdf:resource="mailto:team@glintsoft.com"/>
+      </foaf:Person>
+    </doap:maintainer>
+    
+    <doap:developer>
+      <foaf:Person>
+        <foaf:name>Glint Soft Team</foaf:name>
+        <foaf:mbox rdf:resource="mailto:team@glintsoft.com"/>
+      </foaf:Person>
+    </doap:developer>
+    
+    <asfext:pmc rdf:resource="https://github.com/glint-soft"/>
+  </doap:Project>
+
+</rdf:RDF>
